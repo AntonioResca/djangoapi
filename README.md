@@ -6,23 +6,25 @@
 ### installazione
 ###
 
-sudo apt update
+     sudo apt update
 
-python3 -V
+     python3 -V
 
-sudo apt install -y python3-pip python3-venv
+     sudo apt install -y python3-pip python3-venv
 
-python3 -m venv venv
+     python3 -m venv venv
 
-source venv/bin/activate
+     source venv/bin/activate
 
-pip install django djangorestframework
+     pip install -r requirements.txt
 
-python manage.py makemigrations
+     cd myproject
 
-python manage.py migrate
+     python manage.py makemigrations
 
-python manage.py runserver
+     python manage.py migrate
+
+     python manage.py runserver
 
 ###
 ### test
@@ -32,10 +34,10 @@ per il test delle api è consigliabile usare un client come postman, insomnia, h
 
 se disponibile, per un primo, rapido test si può usare curl:
 
-curl -X POST http://127.0.0.1:8000/api/my-function/ \
-     -H "Content-Type: application/json" \
-     -d '{"input": 5}'
+     curl -X POST http://127.0.0.1:8000/api/my-function/ \
+          -H "Content-Type: application/json" \
+          -d '{"input": 5}'
 
 se tutto funziona ritorna questo json:
 
-{"result": 10}
+     {"result": 10}
